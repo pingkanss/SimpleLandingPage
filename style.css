@@ -1,0 +1,131 @@
+.nav-link {
+    @apply text-gray-700 dark:text-gray-200
+           hover:text-indigo-600 dark:hover:text-indigo-400
+           transition font-medium;
+  }
+  
+  .section {
+    @apply py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6;
+  }
+  
+  .section-text {
+    @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed;
+  }
+  
+  .btn-primary {
+    @apply bg-white text-indigo-600
+           px-8 py-3 rounded-full font-semibold
+           hover:bg-indigo-100 transition;
+  }
+  
+  .btn-outline {
+    @apply border border-white
+           px-8 py-3 rounded-full
+           hover:bg-white hover:text-indigo-600 transition;
+  }
+  
+  .about-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .about-left,
+  .about-right {
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    will-change: transform, opacity;
+  }
+  
+  /* floating card */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .about-float {
+    animation: float 4s ease-in-out infinite;
+  }  
+
+  .card {
+    @apply bg-white dark:bg-gray-700
+           p-8 rounded-2xl shadow-lg
+           hover:-translate-y-2
+           hover:shadow-indigo-500/20
+           transition duration-300
+           text-lg font-semibold
+           opacity-0 translate-y-6;
+  }
+
+  
+  .project-card {
+    @apply relative overflow-hidden rounded-2xl shadow-lg
+           transition duration-300 hover:-translate-y-2;
+  }
+  
+  .project-card img {
+    @apply w-full h-64 object-cover
+           transition duration-500
+           group-hover:scale-110;
+  }
+  
+  .overlay {
+    @apply absolute inset-0 bg-indigo-600/80
+           flex flex-col justify-center items-center
+           text-white text-center
+           opacity-0 transition duration-300
+           group-hover:opacity-100;
+  }
+
+
+  .modal {
+    @apply fixed inset-0 bg-black/60 flex items-center justify-center z-50;
+  }
+  
+  .modal-content {
+    @apply bg-white dark:bg-gray-800
+           rounded-2xl p-8 max-w-lg w-full
+           text-center relative
+           animate-[fadeIn_0.3s_ease];
+  }
+  
+  .modal-content h3 {
+    @apply text-2xl font-bold mb-4;
+  }
+  
+  .modal-content p {
+    @apply text-gray-600 dark:text-gray-300 mb-6;
+  }
+  
+  .modal-content a {
+    @apply inline-block bg-indigo-600 text-white
+           px-6 py-3 rounded-full
+           hover:bg-indigo-700 transition;
+  }
+  
+  .close-btn {
+    @apply absolute top-4 right-4 text-xl opacity-70 hover:opacity-100;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-scaleIn {
+    animation: scaleIn 0.3s ease-out;
+  }
